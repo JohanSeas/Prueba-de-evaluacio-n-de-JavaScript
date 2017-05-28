@@ -1,8 +1,12 @@
 function insertar0() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=0
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=0;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='0'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -11,13 +15,13 @@ function insertar0() {
 }
 function insertar1() {
   var num1=document.getElementById('display').innerHTML;
-  var opActiva=sessionStorage.getItem("opProceso");
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=1
     }else if(num1 != "0"&&opActiva=="yes"){
       document.getElementById('display').innerHTML=1;
-      sessionStorage.setItem("opProceso", "no")
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='1'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -26,13 +30,13 @@ function insertar1() {
 }
 function insertar2() {
   var num1=document.getElementById('display').innerHTML;
-  var opActiva=sessionStorage.getItem("opProceso");
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=2
     }else if(num1 != "0"&&opActiva=="yes"){
       document.getElementById('display').innerHTML=2;
-      sessionStorage.setItem("opProceso", "no")
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='2'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -41,9 +45,13 @@ function insertar2() {
 }
 function insertar3() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=3
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=3;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='3'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -52,9 +60,13 @@ function insertar3() {
 }
 function insertar4() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=4
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=4;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='4'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -63,9 +75,13 @@ function insertar4() {
 }
 function insertar5() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=5
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=5;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='5'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -74,9 +90,13 @@ function insertar5() {
 }
 function insertar6() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=6
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=6;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='6'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -85,9 +105,13 @@ function insertar6() {
 }
 function insertar7() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=7
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=7;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='7'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -96,9 +120,13 @@ function insertar7() {
 }
 function insertar8() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=8
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=8;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='8'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -107,9 +135,13 @@ function insertar8() {
 }
 function insertar9() {
   var num1=document.getElementById('display').innerHTML;
+  var opActiva=sessionStorage.getItem("opActive");
   if (num1.length<=7) {
     if(num1 == '0'){
       document.getElementById('display').innerHTML=9
+    }else if(num1 != "0"&&opActiva=="yes"){
+      document.getElementById('display').innerHTML=9;
+      sessionStorage.setItem("opActive", "no")
     }else{
       var num2='9'; var res = num1.concat(num2);
       document.getElementById('display').innerHTML=res;
@@ -150,7 +182,7 @@ function pressOn() {
   sessionStorage.setItem("valor", "")
   sessionStorage.setItem("signo", "")
   sessionStorage.setItem("valor2", "")
-  sessionStorage.setItem("opProceso", "")
+  sessionStorage.setItem("opActive", "")
 }
 
 function btnSumar(){
@@ -158,17 +190,37 @@ function btnSumar(){
     var valor2 = document.getElementById("display").innerHTML;
     sessionStorage.setItem("valor2", valor2)
     sessionStorage.setItem("signo", "+")
-    sessionStorage.setItem("opProceso", "yes")
+    sessionStorage.setItem("opActive", "yes")
     var valor1 = sessionStorage.getItem("valor");
     var valor2 = sessionStorage.getItem("valor2");
-    var res =  parseInt(valor1) + parseInt(valor2);
+    var res =  parseFloat(valor1) + parseFloat(valor2);
     document.getElementById('display').innerHTML = res;
     sessionStorage.setItem("valor", res)
   } else {
     var valor = document.getElementById("display").innerHTML;
     sessionStorage.setItem("valor", valor)
     sessionStorage.setItem("signo", "+")
-    sessionStorage.setItem("opProceso", "yes")
+    sessionStorage.setItem("opActive", "yes")
+    document.getElementById('display').innerHTML=""
+  }
+}
+
+function btnRestar(){
+  if (sessionStorage.getItem("valor")>0) {
+    var valor2 = document.getElementById("display").innerHTML;
+    sessionStorage.setItem("valor2", valor2)
+    sessionStorage.setItem("signo", "-")
+    sessionStorage.setItem("opActive", "yes")
+    var valor1 = sessionStorage.getItem("valor");
+    var valor2 = sessionStorage.getItem("valor2");
+    var res =  parseFloat(valor1) - parseFloat(valor2);
+    document.getElementById('display').innerHTML = res;
+    sessionStorage.setItem("valor", res)
+  } else {
+    var valor = document.getElementById("display").innerHTML;
+    sessionStorage.setItem("valor", valor)
+    sessionStorage.setItem("signo", "-")
+    sessionStorage.setItem("opActive", "yes")
     document.getElementById('display').innerHTML=""
   }
 }
@@ -179,12 +231,21 @@ function calc() {
   if (sessionStorage.getItem("signo")=="+") {
     var valor1 = sessionStorage.getItem("valor");
     var valor2 = sessionStorage.getItem("valor2");
-    var res =  parseInt(valor1) + parseInt(valor2);
+    var res =  parseFloat(valor1) + parseFloat(valor2);
     document.getElementById('display').innerHTML = res;
     sessionStorage.setItem("valor", "0")
     sessionStorage.setItem("signo", "=")
     sessionStorage.setItem("valor2", "")
-    sessionStorage.setItem("opProceso", "yes")
+    sessionStorage.setItem("opActive", "yes")
+  }else if (sessionStorage.getItem("signo")=="-") {
+    var valor1 = sessionStorage.getItem("valor");
+    var valor2 = sessionStorage.getItem("valor2");
+    var res =  parseFloat(valor1) - parseFloat(valor2);
+    document.getElementById('display').innerHTML = res;
+    sessionStorage.setItem("valor", "0")
+    sessionStorage.setItem("signo", "=")
+    sessionStorage.setItem("valor2", "")
+    sessionStorage.setItem("opActive", "yes")
   }else {
     alert("no es suma")
   }
@@ -205,3 +266,4 @@ document.getElementById('punto').onclick = insertarPunto
 document.getElementById('sign').onclick = insertarSignoNegativo
 document.getElementById('igual').onclick = calc
 document.getElementById('mas').onclick = btnSumar
+document.getElementById('menos').onclick = btnRestar
