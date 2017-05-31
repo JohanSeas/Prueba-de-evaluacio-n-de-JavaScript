@@ -1,4 +1,5 @@
 var calculadora = {
+  //funcion para la tecla 0
   insertar0: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -14,6 +15,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 1
   insertar1: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -29,6 +31,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 2
   insertar2: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -44,6 +47,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 3
   insertar3: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -59,6 +63,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 4
   insertar4: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -74,6 +79,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 5
   insertar5: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -89,6 +95,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 6
   insertar6: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -104,6 +111,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 7
   insertar7: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -119,6 +127,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 8
   insertar8: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -134,6 +143,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla 9
   insertar9: function() {
     var num1=document.getElementById('display').innerHTML;
     var opActiva=sessionStorage.getItem("opActive");
@@ -149,6 +159,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla "."
   insertarPunto: function() {
     var num1=document.getElementById('display').innerHTML;
     if (num1.length<=8,num1.indexOf(".",0)<1) {
@@ -160,6 +171,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla para negativo o positivo
   insertarSignoNegativo: function() {
     var num1=document.getElementById('display').innerHTML;
     if (num1.length<=7,num1.indexOf("-",0)<0) {
@@ -178,6 +190,7 @@ var calculadora = {
       }
     }
   },
+  //funcion para la tecla de reinicio
   pressOn: function() {
     document.getElementById('display').innerHTML=0
     sessionStorage.setItem("valor", "")
@@ -185,6 +198,7 @@ var calculadora = {
     sessionStorage.setItem("valor2", "")
     sessionStorage.setItem("opActive", "")
   },
+  //función de sumar
   sumar: function() {
     var valor2 = document.getElementById("display").innerHTML;
     sessionStorage.setItem("valor2", valor2)
@@ -196,6 +210,7 @@ var calculadora = {
     document.getElementById('display').innerHTML = res;
     sessionStorage.setItem("valor", res)
   },
+  //función de restar
   restar: function() {
     var valor2 = document.getElementById("display").innerHTML;
     sessionStorage.setItem("valor2", valor2)
@@ -207,6 +222,7 @@ var calculadora = {
     document.getElementById('display').innerHTML = res;
     sessionStorage.setItem("valor", res)
   },
+  //función de multiplicar
   multiplicar: function() {
     var valor2 = document.getElementById("display").innerHTML;
     sessionStorage.setItem("valor2", valor2)
@@ -218,6 +234,7 @@ var calculadora = {
     document.getElementById('display').innerHTML = res;
     sessionStorage.setItem("valor", res)
   },
+  //función de dividir
   dividir: function() {
     var valor2 = document.getElementById("display").innerHTML;
     sessionStorage.setItem("valor2", valor2)
@@ -229,6 +246,7 @@ var calculadora = {
     document.getElementById('display').innerHTML = res;
     sessionStorage.setItem("valor", res)
   },
+  //función de tecla sumar
   btnSumar: function(){
     if (sessionStorage.getItem("signo")=="+") {
       calculadora.sumar()
@@ -247,6 +265,7 @@ var calculadora = {
     }
     sessionStorage.setItem("signo", "+")
   },
+  //función de tecla restar
   btnRestar: function(){
     if (sessionStorage.getItem("signo")=="+") {
       calculadora.sumar()
@@ -265,6 +284,7 @@ var calculadora = {
     }
     sessionStorage.setItem("signo", "-")
   },
+  //función de tecla multiplicar
   btnMultiplicar: function(){
     if (sessionStorage.getItem("signo")=="+") {
       calculadora.sumar()
@@ -283,6 +303,7 @@ var calculadora = {
     }
     sessionStorage.setItem("signo", "*")
   },
+  //función de tecla dividir
   btnDividir: function(){
     if (sessionStorage.getItem("signo")=="+") {
       calculadora.sumar()
@@ -301,6 +322,7 @@ var calculadora = {
     }
     sessionStorage.setItem("signo", "/")
   },
+  //función de tecla igual
   calc: function() {
     var valor2 = document.getElementById("display").innerHTML;
     sessionStorage.setItem("valor2", valor2)
@@ -321,7 +343,7 @@ var calculadora = {
     sessionStorage.setItem("opActive", "yes")
   }
 }
-
+//listener asignados a teclas
 document.getElementById('on').onclick = calculadora.pressOn
 document.getElementById('0').onclick = calculadora.insertar0
 document.getElementById('1').onclick = calculadora.insertar1
@@ -340,5 +362,5 @@ document.getElementById('mas').onclick = calculadora.btnSumar
 document.getElementById('menos').onclick = calculadora.btnRestar
 document.getElementById('por').onclick = calculadora.btnMultiplicar
 document.getElementById('dividido').onclick = calculadora.btnDividir
-
+//inicializador de reinicio de calculadora
 calculadora.pressOn()
